@@ -65,15 +65,28 @@ header p {
 }
 
 main {
+  margin: 6rem auto;
+}
+
+.cards {
   display: grid;
   align-items: center;
   justify-content: space-between;
   gap: 3.2rem;
-  margin: 6rem auto;
   grid-template-areas:
     "A B C"
     "D B F"
     "D E F";
+    animation: rightleft 700ms 350ms backwards;
+}
+
+.card img {
+  filter: brightness(0.8);
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  filter: brightness(1);
 }
 
 main div:nth-child(1) {
@@ -98,5 +111,30 @@ main div:nth-child(5) {
 
 main div:nth-child(6) {
     grid-area: F;
+}
+
+.footer {
+  text-align: center;
+  font-family: var(--ff-main);
+  color: #4A4E69;
+  margin-top: 5rem;
+  animation: rightleft 700ms 350ms backwards;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #4A4E69;
+}
+
+@keyframes rightleft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
